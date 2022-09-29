@@ -1,4 +1,4 @@
-" This file is part of vim-macos-ime.
+" This file is a modification of [vim-macos-ime](https://github.com/laishulu/vim-macos-ime).
 "
 " vim-macos-ime is free software: you can redistribute it and/or modify
 " it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ if !exists('g:macosime_normal_ime')
 endif
 
 if !exists('g:macosime_cjk_ime')
-    let g:macosime_cjk_ime= 'com.sogou.inputmethod.sogou.pinyin'
+    let g:macosime_cjk_ime= 'im.rime.inputmethod.Squirrel.Rime'
 endif
 
 function s:switch_normal_ime()
