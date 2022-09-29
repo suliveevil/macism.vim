@@ -16,27 +16,26 @@
 if exists('g:loaded_macosime')
     finish
 endif
-let g:loaded_macosime=1
+let g:loaded_macosime = 1
 
 if !exists('g:macosime_auto_detect')
-    let g:macosime_auto_detect=1
+    let g:macosime_auto_detect = 1
 endif
 
 if !exists('g:macosime_insert_leave')
-    let g:macosime_insert_leave=1
+    let g:macosime_insert_leave = 1
 endif
 
 if !exists('g:macosime_macism_path')
-    let g:macosime_macism_path='macism'
+    let g:macosime_macism_path = 'macism'
 endif
 
 if !exists('g:macosime_normal_ime')
-    let g:macosime_normal_ime='com.apple.keylayout.US'
+    let g:macosime_normal_ime = 'com.apple.keylayout.ABC'
 endif
 
 if !exists('g:macosime_cjk_ime')
-"     let g:macosime_cjk_ime='im.rime.inputmethod.Squirrel.Rime'
-    let g:macosime_cjk_ime='com.apple.inputmethod.SCIM.ITABC'
+    let g:macosime_cjk_ime= 'com.apple.inputmethod.SCIM.ITABC'
 endif
 
 function s:switch_normal_ime()
@@ -57,10 +56,10 @@ endfunction
 
 function s:insert_entered()
     if g:macosime_auto_detect
-        let l:char=getline('.')[col('.') - 2]
-        let l:cjk_mode=l:char >="\x80"
+        let l:char = getline('.')[col('.') - 2]
+        let l:cjk_mode = l:char >= "\x80"
     else
-        let l:cjk_mode=1
+        let l:cjk_mode = 1
     endif
     call s:switch_cjk_ime(l:cjk_mode)
 endfunction
